@@ -1,6 +1,6 @@
 # 🧠 RAG Chatbot (Retrieval-Augmented Generation)
 
-A scalable and intelligent **RAG (Retrieval-Augmented Generation) chatbot** that combines the power of Large Language Models (LLMs) with a custom knowledge base to deliver accurate, context-aware responses.
+A scalable and intelligent **RAG (Retrieval-Augmented Generation) chatbot** that combines LLMs with a custom knowledge base to deliver accurate, context-aware answers.
 
 ---
 
@@ -12,83 +12,90 @@ A scalable and intelligent **RAG (Retrieval-Augmented Generation) chatbot** that
 
 ## 🚀 Features
 
-- 🔍 Semantic Search using vector embeddings  
-- 🧠 Context-Aware Responses powered by LLMs  
-- 📄 Document Ingestion (PDF, TXT, Markdown, etc.)  
-- ⚡ FastAPI Backend for real-time interaction  
-- 🗂️ Vector Database Integration (Pinecone / FAISS / Chroma)  
-- 🔄 Scalable Architecture ready for production use  
+* 🔍 Semantic Search using vector embeddings
+* 🧠 Context-aware responses using LLM
+* 📄 Document ingestion (PDF, TXT, Markdown)
+* ⚡ FastAPI backend
+* 🗂️ Pinecone vector database
+* 🔄 Scalable architecture
 
 ---
-🏗️ Architecture
+
+## 🏗️ Architecture
+
+```
 User Query
    ↓
-Embedding Model
+Embedding (Sentence Transformers)
    ↓
-Vector Database (Top-K Retrieval)
+Vector DB (Pinecone - Top K)
    ↓
 Context + Prompt
    ↓
-LLM (OpenAI / LLaMA / etc.)
+LLM (Groq - LLaMA / Mixtral)
    ↓
 Final Response
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology              |
-|-------------|------------------------|
-| Backend     | FastAPI                |
-| Language    | Python                 |
-| LLM         | OpenAI                 |
-| Embeddings  | Sentence Transformers  |
-| Vector DB   | Pinecone               |
-| Deployment  | Docker / AWS / Render  |
-
----
-
-## 🛠️ Tech Stack
-
-- **Backend**: FastAPI  
-- **Language**: Python  
-- **LLM**: OpenAI  
-- **Embeddings**: Sentence Transformers  
-- **Vector DB**: Pinecone  
-- **Deployment**: Docker / AWS / Render  
+| Layer      | Technology             |
+| ---------- | ---------------------- |
+| Backend    | FastAPI                |
+| Language   | Python                 |
+| LLM        | Groq (LLaMA / Mixtral) |
+| Embeddings | Sentence Transformers  |
+| Vector DB  | Pinecone               |
+| Deployment | AWS Lambda / Render    |
 
 ---
 
 ## ⚙️ Setup
 
 ```bash
-# Clone repo
 git clone https://github.com/Ayushkumarsinghyogesh/RAG_super_chatbot.git
 cd RAG_super_chatbot
 
-# Create virtual env
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-# venv\Scripts\activate    # Windows
+python3 -m venv venv
+source venv/bin/activate
 
-# Install deps
 pip install -r requirements.txt
 
-
-# RUN 
 uvicorn app.main:app --reload
+```
 
-📥 Ingest Data
+---
+
+## 📥 Ingest Data
+
+```bash
 python3 -m app.utils.ingest
+```
 
-📂 Structure
+---
+
+## 📂 Project Structure
+
+```
 RAG_super_chatbot/
 ├── app/
 │   ├── main.py
 │   ├── routes/
-│   ├── services/
-│   └── utils/
+│   ├── utils/
 ├── data/
-├── embeddings/
 ├── requirements.txt
 └── README.md
+```
+
+---
+
+## 🎯 Use Cases
+
+* Internal knowledge chatbot
+* Document Q&A system
+* AI-powered search
+* Customer support automation
+
+---
