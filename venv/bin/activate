@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV=/home/lenovo/rag_chatbot/venv
+VIRTUAL_ENV=/home/lenovo/Documents/project/rag_chatbot/venv
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
